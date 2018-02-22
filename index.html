@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+		<title>Element effects</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/fonts.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<main>
+			<div class="wrapper">
+				<div class="container">
+					<div class="container__title">
+						<h1>Element effects</h1>
+					</div>
+					<div class="example">
+						<div class="example__information">
+							<h2>Transition</h2>
+							<p>Свойство CSS transition это сокращенное свойство для transition-property, transition-duration, transition-timing-function, и transition-delay. Оно позволяет определять переходное состояние между двумя состояниями элемента. Различные состояния могут быть определены с помощью псевдоклассов, таких как :hover или :active или установлены динамически с помощью JavaScript.</p>
+							<pre class="brush:css line-numbers  language-css"><code class=" language-css"><span class="token comment" spellcheck="true">/* Применить к 1 свойству */</span>
+<span class="token comment" spellcheck="true">/* имя свойства | длительность */</span>
+<span class="token property">transition</span><span class="token punctuation">:</span> margin-left <span class="token number">4</span>s<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* имя свойства | длительность | задержка */</span>
+<span class="token property">transition</span><span class="token punctuation">:</span> margin-left <span class="token number">4</span>s <span class="token number">1</span>s<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* имя свойства | длительность | временная функция | задержка */</span>
+<span class="token property">transition</span><span class="token punctuation">:</span> margin-left <span class="token number">4</span>s ease-in-out <span class="token number">1</span>s<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* Применить к 2 свойствам */</span>
+<span class="token property">transition</span><span class="token punctuation">:</span> margin-left <span class="token number">4</span>s, color <span class="token number">1</span>s<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* Применить ко всем измененным свойствам */</span>
+<span class="token property">transition</span><span class="token punctuation">:</span> all <span class="token number">0.5</span>s ease-out<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* Глобальные значения */</span>
+<span class="token property">transition</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">transition</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">transition</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+							<h2>Transition к элемету</h2>
+							<p>Можно применить эффект на элемент(цвет, бордер, шрифт, положение и т.д.)</p>
+							<script async src="https://jsfiddle.net/afwvyvx9/5/embed/html,css,result/dark/"></script>
+							<h2>Transition к псевдоэлементам before, after</h2>
+							<p>Можно применить эффект на псевдоэлементы</p>
+							<script async src="https://jsfiddle.net/hay1hf8r/5/embed/html,css,result/dark/"></script>
+							<h2>Filter</h2>
+							<p>Так же существует эффект измениения внешнего вида элемента</p>
+							<pre class="brush:css line-numbers  language-css"><code class=" language-css"><span class="token property">filter</span><span class="token punctuation">:</span> <span class="token url">url(resources.svg)</span><span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">blur</span><span class="token punctuation">(</span><span class="token number">5</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">brightness</span><span class="token punctuation">(</span><span class="token number">0.4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">contrast</span><span class="token punctuation">(</span><span class="token number">200%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">drop-shadow</span><span class="token punctuation">(</span><span class="token number">16</span>px <span class="token number">16</span>px <span class="token number">20</span>px blue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">grayscale</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">hue-rotate</span><span class="token punctuation">(</span><span class="token number">90</span>deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">invert</span><span class="token punctuation">(</span><span class="token number">75%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">opacity</span><span class="token punctuation">(</span><span class="token number">25%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">saturate</span><span class="token punctuation">(</span><span class="token number">30%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">sepia</span><span class="token punctuation">(</span><span class="token number">60%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* Применение нескольких фильтров */</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">contrast</span><span class="token punctuation">(</span><span class="token number">175%</span><span class="token punctuation">)</span> <span class="token function">brightness</span><span class="token punctuation">(</span><span class="token number">3%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* Глобальные значения */</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+							<p>Примеры можно посмотреть - <a href="https://developer.mozilla.org/ru/docs/Web/CSS/filter">примеры</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="js/modernizr.min.js" ></script>
+		<script src="js/jquery.min.js" ></script>
+	</body>
+</html>
